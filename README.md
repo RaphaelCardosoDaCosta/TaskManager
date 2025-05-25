@@ -1,6 +1,6 @@
-Angular CLI: 19.2.12
-Node: 20.19.2
-npm: 10.9.0
+Angular CLI: 19.2.12  
+Node: 20.19.2  
+npm: 10.9.0  
 
 iniciando o spring-boot 
 "c:\user\TaskManager\TaskManager>  mvn spring-boot:run"
