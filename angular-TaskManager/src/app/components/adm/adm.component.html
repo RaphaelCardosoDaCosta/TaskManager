@@ -1,0 +1,70 @@
+<div class="app-header">
+    <div class="logo">
+        <h1>
+            <a routerLink="/home" routerLinkActive="active">""
+                TasksManager
+            </a>
+        </h1>
+    </div>
+</div>
+<div class="task-form-container">
+    <h2>Criar tarefa</h2>
+  <form #taskForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="title">Título</label>
+      <input
+        type="text"
+        id="title"
+        name="title"
+        [(ngModel)]="task.title"
+        required
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Descrição</label>
+      <textarea
+        id="description"
+        name="description"
+        [(ngModel)]="task.description"
+        required
+        [ngModelOptions]="{ standalone: true }"
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="status">Status</label>
+      <select
+        id="status"
+        name="status"
+        [(ngModel)]="task.status"
+        required
+        [ngModelOptions]="{ standalone: true }"
+      >
+        <option value="">Selecione</option>
+        <option value="Pendente">Pendente</option>
+        <option value="Em Andamento">Em progresso</option>
+        <option value="Concluído">Concluído</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="priority">Prioridade</label>
+      <select
+        id="priority"
+        name="priority"
+        [(ngModel)]="task.priority"
+        required
+        [ngModelOptions]="{ standalone: true }"
+      >
+        <option value="">Selecione</option>
+        <option value="baixa">Baixa</option>
+        <option value="média">Média</option>
+        <option value="alta">Alta</option>
+      </select>
+    </div>
+
+    <button type="submit">Salvar</button>
+  </form>
+</div>

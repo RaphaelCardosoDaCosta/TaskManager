@@ -1,0 +1,42 @@
+.app-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #100f16;
+    padding: 2rem;
+}
+.logo h1, a{
+    text-decoration: none;
+    color: rgba(240, 248, 255, 0.874);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.box1, .box2 {
+    width: 13rem;
+    margin-left: 1.3rem;
+    padding: 0.4em;
+    background-color: #444069;
+    color: rgba(240, 248, 255, 0.874);
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.8rem; /* opcional */
+    transition: background 0.2s;
+
+    font-size: 1.2rem;      /* Aumenta o tamanho da fonte */
+    font-weight: 600;       /* Deixa a fonte mais destacada */
+}
+
+.box1:hover, .box2:hover {
+    background-color: #342b709f;
+    border: 2px solid #e6e5ed7a;
+}

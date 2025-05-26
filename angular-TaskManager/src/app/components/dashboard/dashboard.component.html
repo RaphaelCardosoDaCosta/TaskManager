@@ -1,0 +1,93 @@
+<div class="app-header">
+    <div class="logo">
+        <h1>
+            <a routerLink="/home" routerLinkActive="active">""
+                TasksManager
+            </a>
+        </h1>
+    </div>
+    <div class="btns">
+        <a routerLink="/adm" routerLinkActive="active" class="box2">
+            Adm
+        </a>
+    </div>
+</div>
+<div class="container">
+
+    <div class="dashboard-container">
+        <div class="filters">
+            <label>
+                Status:
+                <select [(ngModel)]="filterStatus" (change)="applyFilters()">
+                    <option value="">Todos</option>
+                    <option value="Pendente">Pendente</option>
+                    <option value="Em Andamento">Em Andamento</option>
+                    <option value="Concluído">Concluído</option>
+                </select>
+            </label>
+
+            <label>
+                Prioridade:
+                <select [(ngModel)]="filterPriority" (change)="applyFilters()">
+                    <option value="">Todas</option>
+                    <option value="baixa">Baixa</option>
+                    <option value="média">Média</option>
+                    <option value="alta">Alta</option>
+                </select>
+            </label>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Descrição</th>
+                    <th>Status</th>
+                    <th>Prioridade</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let task of filteredTasks">
+                    <td>{{ task.title }}</td>
+                    <td>{{ task.description }}</td>
+                    <td>{{ task.status }}</td>
+                    <td>{{ task.priority }}</td>
+                    <td>
+                        <button (click)="startEdit(task)">✏️</button>
+                        <button (click)="deleteTask(task.id!)">🗑️</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Formulário de Edição -->
+        <div *ngIf="editingTask" class="edit-form">
+            <h3>Editar Tarefa</h3>
+            <form (ngSubmit)="updateTask()">
+                <label>Título:
+                    <input [(ngModel)]="editingTask.title" name="title" required />
+                </label>
+                <label>Descrição:
+                    <input [(ngModel)]="editingTask.description" name="description" required />
+                </label>
+                <label>Status:
+                    <select [(ngModel)]="editingTask.status" name="status">
+                        <option value="Pendente">Pendente</option>
+                        <option value="Em Andamento">Em andamento</option>
+                        <option value="Concluído">Concluído</option>
+                    </select>
+                </label>
+                <label>Prioridade:
+                    <select [(ngModel)]="editingTask.priority" name="priority">
+                        <option value="baixa">Baixa</option>
+                        <option value="média">Média</option>
+                        <option value="alta">Alta</option>
+                    </select>
+                </label>
+                <button type="submit">Salvar</button>
+                <button type="button" (click)="cancelEdit()">Cancelar</button>
+            </form>
+        </div>
+
+    </div>
+</div>

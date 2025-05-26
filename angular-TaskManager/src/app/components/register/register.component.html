@@ -1,0 +1,40 @@
+<app-header></app-header>
+
+<div class="page-container">
+    <div class="register-container">
+        <h2>Cadastro</h2>
+        <form (ngSubmit)="onSubmit()">
+            <div>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" [(ngModel)]="nome" name="nome" required />
+            </div>
+
+            <div>
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" name="cpf" [ngModel]="cpf" (ngModelChange)="onCpfChange($event)"
+                    maxlength="14" />
+                <small *ngIf="cpf && !cpfValido()" style="color: #f87171;">
+                    CPF inválido. Formato esperado: 000.000.000-00
+                </small>
+
+            </div>
+
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" [(ngModel)]="email" name="email" required />
+                <small *ngIf="email && !emailValido()" style="color: #f87171;">
+                    Email inválido.
+                </small>
+            </div>
+
+            <div>
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" [(ngModel)]="senha" name="senha" required />
+            </div>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+
+        <p>Já tem conta? <a routerLink="/login">Entrar</a></p>
+    </div>
+</div>

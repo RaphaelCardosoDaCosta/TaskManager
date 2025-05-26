@@ -1,0 +1,22 @@
+<app-header></app-header>
+<div class="page-container">
+  <div class="login-container">
+    <h2>Entrar</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div>
+        <input placeholder="email" type="email" id="email" [(ngModel)]="email" name="email" required />
+      </div>
+
+      <div>
+        <input placeholder="senha" type="password" id="senha" [(ngModel)]="senha" name="senha" required />
+      </div>
+
+      <button type="submit">Ok</button>
+      <p *ngIf="errorMessage" class="error">{{errorMessage}}</p>
+    </form>
+
+    <p>Não tem conta? <a routerLink="/register">Cadastrar-se</a></p>
+  </div>
+</div>
+
+

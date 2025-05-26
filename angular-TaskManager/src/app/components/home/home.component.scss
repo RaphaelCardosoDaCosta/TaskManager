@@ -1,0 +1,46 @@
+.main-container {
+  flex: 1;
+  display: flex;
+  background: linear-gradient(#0d0b12, #361f75);
+  width: 100%;
+  height: 84vh;
+}
+
+
+.main-banner {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  height: 80vh;
+}
+
+.myImg{
+  position: absolute;
+  top: 50%;
+}
+
+.title{
+    position: absolute;
+    right:72%;
+    top: 24%;
+    width: auto;
+    height: auto;
+}
+.banner-title {
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 20%; /* ajuste conforme necessário */
+  left: 6%;
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  pointer-events: none; /* o clique passa direto pra imagem, se necessário */
+}
+.sec-banner{
+    position: absolute;
+    right: 10%;
+}
